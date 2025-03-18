@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:w6_practice_part1/Week6_Practice(part1)/EX-1-START-CODE/models/course.dart';
 
+import 'provider/courses_provider.dart';
+import 'repository/courses_mock_repository.dart';
 import 'screens/course_list_screen.dart';
 
 void main() {
@@ -9,13 +13,14 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-
-      home: CourseListScreen(),
+    return ChangeNotifierProvider(
+      create: (ctx) => CoursesProvider(CoursesMockRepository()),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: CourseListScreen(),
+      ),
     );
   }
 }
