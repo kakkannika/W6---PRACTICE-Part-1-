@@ -5,3 +5,4 @@ abstract class CoursesRepository {
  List<Course> getCourses();
  void addCourse(Course course , CourseScore score);
 }
+

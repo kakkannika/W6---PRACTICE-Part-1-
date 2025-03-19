@@ -8,12 +8,14 @@ import 'post_repository.dart';
 
 class HttpPostRepository implements PostRepository {
   final String apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  // apiUrl: a constant string that holds the URL for the API endpoint. 
+
 
   @override
-  Future<List<Post>> getPosts() async {
+  Future<List<Post>> getPosts() async {  // getPosts: an asychronous method that fetches a list of posts. 
     try {
-      final response = await http.get(Uri.parse(apiUrl));
-      
+      final response = await 
+      http.get(Uri.parse(apiUrl)); // Makes a GET request to the API endpoint. 
       if (response.statusCode == 200) {
         final List<dynamic> jsonList = json.decode(response.body);
         return jsonList.map((json) {

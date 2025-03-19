@@ -23,6 +23,7 @@ class CourseListScreen extends StatelessWidget {
         backgroundColor: mainColor,
         title: const Text('SCORE APP', style: TextStyle(color: Colors.white)),
       ),
+      // apply consumber to get the courses
       body: Consumer<CoursesProvider>(
         builder: (ctx, coursesProvider, child) {
           final courses = coursesProvider.courses;

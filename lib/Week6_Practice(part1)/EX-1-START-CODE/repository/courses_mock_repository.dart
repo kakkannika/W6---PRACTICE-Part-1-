@@ -6,7 +6,8 @@ class CoursesMockRepository implements CoursesRepository {
   @override
   void addCourse(Course course, CourseScore score) {
     course.addScore(score);
-    _courses.add(course);
+
+    
   }
   final List<Course> _courses = [
     Course(name: 'HTML'),

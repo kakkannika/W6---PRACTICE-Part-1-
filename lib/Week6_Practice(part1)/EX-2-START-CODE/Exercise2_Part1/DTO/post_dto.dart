@@ -12,7 +12,9 @@ class PostDTO {
     required this.userId,
   });
 
-  factory PostDTO.fromJson(Map<String, dynamic> json) {
+  // define construct name fromJson. the instance from a Json map. 
+  factory PostDTO.fromJson(Map<String, dynamic>
+ json) {
  
     assert(json['id'] is int);
     assert(json['title'] is String);
